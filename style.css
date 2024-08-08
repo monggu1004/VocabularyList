@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: end;
+  min-height: 3vh;
+  width: 100vw;
+  background-color: rgb(87, 87, 87);
+  box-shadow: 1vw 1vw 2vw rgba(229, 229, 229, 0.772);
+}
+.headerRight {
+  width: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0vw 3vw;
+  padding: 1vw 0vw;
+}
+.fa-circle-question,
+.fa-language,
+.fa-bars {
+  font-size: 1.5vw;
+  color: rgba(155, 155, 155, 0.749);
+}
+
+.logodisplay {
+  width: 100vw;
+  min-height: 10vw;
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.logoJapanese {
+  font-size: 3vw;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-family: "Noto Sans Japanese";
+  color: rgb(0, 0, 0);
+  text-shadow: 1px 1px 1px rgb(102, 116, 205);
+}
+.logoKorean {
+  font-family: "Noto Sans Korean";
+  font-size: 1.5vw;
+  font-weight: 900;
+  color: black;
+}
+
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(211, 211, 211);
+  box-shadow: 1vw 1vw 2vw rgba(229, 229, 229, 0.772);
+}
+.navi-left {
+  width: 60vw;
+  display: flex;
+  justify-content: space-around;
+  padding: 1vw;
+  font-size: 1vw;
+  font-weight: 800;
+}
+.fa-bars {
+  font-size: 1.5vw;
+  color: rgba(155, 155, 155);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8vw 2vw;
+}
+.quizcontainer {
+  width: 100vw;
+  min-height: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.quiztitle {
+  font-size: 1.5vw;
+  font-weight: 900;
+  width: 100vw;
+}
+.today {
+  width: 80vw;
+  height: 20vh;
+  display: flex;
+  justify-content: space-around;
+}
+.wordbox,
+.quizbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
