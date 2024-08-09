@@ -3,8 +3,7 @@ const imgContainer = document.querySelector(".imgcontainer");
 const generateButton = document.querySelector(".know");
 
 async function generateImg() {
-  const prompt = promptInput.textContent;
-
+  const prompt = promptInput.value;
   const response = await fetch("http://localhost:3000/generate-image", {
     method: "POST",
     headers: {
@@ -14,6 +13,7 @@ async function generateImg() {
   });
 
   const data = await response.json();
+  console.log(data);
   const imageUrl = data.data[0].url;
 
   const imgElement = document.createElement("img");
