@@ -1,4 +1,4 @@
-let conversJapan = document.querySelector(".conversation");
+const conversJapan = document.querySelector(".conversation");
 const conversKorean = document.querySelector(".words");
 const clickGo = document.querySelector(".know");
 const noClick = document.querySelector(".unknow");
@@ -118,3 +118,6 @@ function showConversation(event) {
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
 }
+
+clickGo.addEventListener("click", showConversation);
+noClick.addEventListener("click", showConversation);
