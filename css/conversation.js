@@ -1,8 +1,3 @@
-let conversJapan = document.querySelector(".conversation");
-const conversKorean = document.querySelector(".words");
-const clickGo = document.querySelector(".know");
-const noClick = document.querySelector(".unknow");
-
 const japanesePhrases = [
   { japanese: "今日は何をしますか？", korean: "오늘은 무엇을 할 건가요?" },
   { japanese: "昨日はとても寒かったです。", korean: "어제는 매우 추웠습니다." },
@@ -111,29 +106,3 @@ const japanesePhrases = [
   { japanese: "電車は何時に来ますか？", korean: "전철은 몇 시에 오나요?" },
   { japanese: "部屋を探しています。", korean: "방을 찾고 있습니다." },
 ];
-
-function showConversation(event) {
-  event.preventDefault();
-  let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
-  let randomPhrase = japanesePhrases[randomIndex];
-  conversJapan.innerText = randomPhrase.japanese;
-  conversKorean.innerText = randomPhrase.korean;
-}
-
-clickGo.addEventListener("click", showConversation);
-noClick.addEventListener("click", showConversation);
-//     const response = await fetch('https://api.openai.com/v1/completions',{
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Authorization': 'Bearer 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'
-//         },
-//         body: JSON.stringify({
-//             model: 'gpt-4o-mini',
-//             prompt: '일본어 회화 문장 하나를 만들고 한국어 번역도 함께 해줘.'
-//             max_tokens:30
-//         })
-
-//     })
-
-// }
