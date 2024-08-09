@@ -27,6 +27,7 @@ body {
 .imgcontainer {
   width: 100%;
   height: 50%;
+  background-color: aquamarine;
 }
 .trainbox {
   width: 60vw;
