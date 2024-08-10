@@ -1,29 +1,34 @@
 const imgContainer = document.querySelector(".imgcontainer");
 const canButton = document.querySelector(".know");
 const cannotButton = document.querySelector(".unknow");
-let phrase = document.querySelector(".words");
 
-canButton.addEventListener("click", () => {
-  setTimeout(() => {
-    phrase = document.querySelector(".words");
-    if (phrase) {
-      sendData(phrase.textContent);
+async function sendData(text) {
+  const response = await fetch("http://localhost:3000/api/create-img", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text }),
+  });
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  return response.json();
+}
+
+async function getImg() {
+  let phrase = document.querySelector(".words");
+  let response;
+  if (phrase) {
+    response = await sendData(phrase.textContent);
+  }
+  if (response && response.url) {
+    addImg(response.url);
+  }
+
+  function addImg(url) {
+    if (url) {
+      imgContainer.innerHTML = `<img src="${url}" alt="create img">`;
     }
-  }, 100);
-
-  async function sendData(text) {
-    const response = await fetch("http://localhost:3000/api/data", {
-      method: "post",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text }),
-    });
   }
+}
 
-  async function addImg(phrase) {
-    const response = await fetch("");
-    const data = await response.json();
-  }
-});
-
-canButton.addEventListener("click");
-cannotButton.addEventListener("click");
+canButton.addEventListener("click", getImg);
