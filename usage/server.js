@@ -22,7 +22,10 @@ app.post("/api/create-img", async (req, res) => {
     size: "1024x1024",
   });
 
-  res.json(response.data);
+  const imgUrl = response.data[0].url;
+  if (imgUrl) {
+    res.json(imgUrl); //클라이언트에게 응답 보내고 종료.
+  }
 });
 
 app.listen(3000, () => {

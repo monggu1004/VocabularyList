@@ -2,7 +2,7 @@ const conversJapan = document.querySelector(".conversation");
 const conversKorean = document.querySelector(".words");
 const clickGo = document.querySelector(".know");
 const noClick = document.querySelector(".unknow");
-
+const imgContainer = document.querySelector(".imgcontainer");
 const japanesePhrases = [
   { japanese: "今日は何をしますか？", korean: "오늘은 무엇을 할 건가요?" },
   { japanese: "昨日はとても寒かったです。", korean: "어제는 매우 추웠습니다." },
@@ -111,12 +111,35 @@ const japanesePhrases = [
   { japanese: "電車は何時に来ますか？", korean: "전철은 몇 시에 오나요?" },
   { japanese: "部屋を探しています。", korean: "방을 찾고 있습니다." },
 ];
-function showConversation(event) {
-  event.preventDefault();
+
+async function showConversation(event) {
+  //전체함수
+  event.preventDefault(); //프리벤트디폴트
   let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
   let randomPhrase = japanesePhrases[randomIndex];
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
+  // 랜덤 문구 생성
+  let koreanText = conversKorean.innerText;
+
+  let responseData = await sendData(koreanText); //>response.json으로 변한 객체
+  //responseData는 서버에서 가져온 이미지url
+  addImg(responseData);
+}
+async function sendData(koreanText) {
+  let response = await fetch("http://localhost:3000/api/create-img", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ qoute: koreanText }),
+  });
+  //sendData가 url을 올바르게 반환해야 함.
+  const data = await response.json();
+  return data;
+}
+async function addImg(Url) {
+  if (Url) {
+    imgContainer.innerHTML = `<img src="${Url} "alt="create img">`;
+  }
 }
 
 clickGo.addEventListener("click", showConversation);
