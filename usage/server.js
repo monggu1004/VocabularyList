@@ -13,10 +13,11 @@ const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 //post는 리소스를 생성, 변경하기위해 설계되었음. 따라서 전송해야할 데이터를 body에 담아 전송.
 
 app.post("/api/create-img", async (req, res) => {
-  const { text } = req.body;
+  const { qoute } = req.body;
 
-  const response = await openai.images.create({
-    prompt: text,
+  const response = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: qoute,
     n: 1,
     size: "1024x1024",
   });
