@@ -138,7 +138,7 @@ async function sendData(JapanText) {
 }
 async function addImg(Url) {
   if (Url) {
-    imgContainer.innerHTML = `<img src="${Url}" alt="create img" class="imgcreate">`;
+    imgContainer.innerHTML = `<img src="${Url}" alt="create img" class="imgcreate" >`;
   }
 }
 
