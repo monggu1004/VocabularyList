@@ -35,7 +35,6 @@ body {
   transition: all 100ms ease-in-out;
 }
 .fa-arrow-left:active,
-.fa-circle-question:active,
 .fa-bars:active {
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.836);
   position: relative;
@@ -105,4 +104,237 @@ body {
 }
 .hidden {
   display: none;
+}
+.navigationbox {
+  background-color: rgb(162, 190, 255);
+  box-shadow: 1px 1px 5px rgba(94, 126, 255, 0.602);
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  display: none;
+}
+.navishow {
+  display: block;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 15vw;
+  height: 10vh;
+}
+.navigation:hover {
+  background-color: rgb(200, 217, 255);
+  transition: all 200ms ease-in-out;
+  border-radius: 10px;
+}
+.navigationurl {
+  font-size: 2vw;
+  font-family: "Nanum Gothic", sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px black;
+}
+.wordbox {
+  width: 100vw;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+.wordheaderbox {
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerleftbox {
+  width: 20vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerbuttonbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 15vh;
+}
+.wordall,
+.japanese,
+.meaning {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-size: 1.2vw;
+  width: 33.3%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wordall:hover,
+.japanese:hover,
+.meaning:hover {
+  transition: all 200ms ease-in-out;
+  background-color: rgba(204, 203, 203, 0.775);
+}
+.clickcolor {
+  background-color: rgba(54, 103, 251, 0.877);
+}
+.wordall {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: solid;
+  border-left: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.japanese {
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.meaning {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.headerrightbox {
+  width: 25vw;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quizbuttonbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 15vh;
+}
+.quiz {
+  width: 10vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: rgba(54, 103, 251, 0.877);
+  border: solid 4px;
+}
+.quizclickcolor {
+  background-color: rgb(54, 103, 251);
+  color: rgb(255, 255, 255);
+}
+.inputbuttonbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 15vh;
+}
+.input {
+  width: 10vw;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bold;
+  font-size: 1.5vw;
+  color: rgba(54, 103, 251, 0.877);
+  border: solid 4px;
+}
+.inputclickcolor {
+  background-color: rgba(54, 103, 251, 0.877);
+  color: white;
+}
+.quiz .wordlistbox {
+  width: 100vw;
+  height: 70vh;
+}
+.inputbox {
+  width: 35%;
+  height: 100%;
+}
+.inputboxnone {
+  display: none;
+}
+.inputlayerbox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.inputtitle {
+  width: 100%;
+  margin-left: 2.5vw;
+
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+
+  font-size: 2vw;
+  font-weight: bolder;
+  color: rgb(78, 34, 255);
+}
+.inputtextbox {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+.input1 {
+  width: 30vw;
+  height: 8vh;
+  background-color: rgb(249, 249, 249);
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 3vh;
+  font-size: 1.5vw;
+  font-weight: bolder;
+  font-family: "Nanum Gothic", sans-serif;
+  outline: none;
+}
+.input1::placeholder {
+  font-size: 1.5vw;
+  font-weight: bolder;
+  color: rgb(205, 205, 205);
+  display: flex;
+  font-family: "Nanum Gothic", sans-serif;
+}
+.input2 {
+  width: 30vw;
+  height: 8vh;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(78, 34, 255);
+  font-family: "Nanum Gothic", sans-serif;
+  font-size: 1.5vw;
+  font-weight: bolder;
+  color: white;
+  margin-top: 2vh;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

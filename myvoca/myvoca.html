@@ -21,6 +21,12 @@
       href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;900&family=Jua&family=Nanum+Gothic&family=Noto+Sans+KR:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;900&family=Jua&family=Nanum+Gothic:wght@800&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="trainheader">
@@ -42,7 +48,57 @@
         '단어'에 일본 단어를 '뜻'에 한국어 뜻을 입력해주세요!
       </div>
     </div>
+    <div class="navigationbox">
+      <div class="navigation">
+        <a class="navigationurl" href="/usage/useage.html">이용하기</a>
+      </div>
+    </div>
+    <div class="wordbox">
+      <div class="wordheaderbox">
+        <div class="headerleftbox">
+          <div class="headerbuttonbox">
+            <div class="wordall">모두</div>
+            <div class="japanese">단어</div>
+            <div class="meaning">뜻</div>
+          </div>
+        </div>
+        <div class="headerrightbox">
+          <div class="inputbuttonbox">
+            <div class="input">추가</div>
+          </div>
+          <div class="quizbuttonbox">
+            <div class="quiz">퀴즈</div>
+          </div>
+        </div>
+      </div>
+      <div class="wordlistbox">
+        <div class="inputbox">
+          <div class="inputlayerbox">
+            <div class="inputtitle">새로운 단어 추가</div>
+            <br />
+            <br />
+            <div class="inputtextbox">
+              <form class="form-layout" action="">
+                <input
+                  class="input1"
+                  type="text"
+                  placeholder="&ensp;단어"
+                  autofocus
+                />
+                <input class="input1" type="text" placeholder="&ensp;뜻" />
+
+                <input class="input2" type="submit" value="입력" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="help.js"></script>
+    <script src="navigation.js"></script>
+    <script src="buttonclick.js"></script>
+    <script src="quiz.js"></script>
+    <script src="addonoff.js"></script>
   </body>
 </html>
