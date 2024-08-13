@@ -1,9 +1,7 @@
 const quizbutton = document.querySelector(".quiz");
 const inputbutton = document.querySelector(".input");
 const inputbox = document.querySelector(".inputbox");
-
 window.addEventListener("load", firsthidden);
-
 function firsthidden() {
   inputbox.classList.add("inputboxnone");
 }
