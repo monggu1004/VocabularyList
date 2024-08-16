@@ -14,16 +14,17 @@ function addLS(event) {
   event.preventDefault();
   const input1text = input1.value;
   const input1_1text = input1_1.value;
-  getwords = JSON.parse(localStorage.getItem("arrJK"));
   getwords.push({ japanese: input1text, korean: input1_1text });
   localStorage.setItem("arrJK", JSON.stringify(getwords));
+  JSON.parse(localStorage.getItem("arrJK"));
 
   addtext(input1text, input1_1text);
+
+  input1.value = "";
+  input1_1.value = "";
 }
 
 function addtext(japanese, korean) {
-  const newwordContainer = document.createElement("div");
-  newwordContainer.classList.add("wordcontainer");
   const newwordLine = document.createElement("div");
   newwordLine.classList.add("wordline");
   const newJapaneseword = document.createElement("div");
@@ -32,32 +33,40 @@ function addtext(japanese, korean) {
   const newkoreanmeaing = document.createElement("div");
   newkoreanmeaing.classList.add("koreanmeaning");
   newkoreanmeaing.textContent = korean;
+  const newwordContainer = document.querySelector(".wordcontainer");
   const wordlinebox = document.createElement("div");
   wordlinebox.classList.add("wordlinebox");
   const deletebox = document.createElement("div");
-  deletebox.classList.add("deletbox");
+  deletebox.classList.add("deletebox");
   const deletebutton = document.createElement("button");
   deletebutton.classList.add("deletebutton");
   deletebutton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
+
   newwordLine.appendChild(newJapaneseword);
   newwordLine.appendChild(newkoreanmeaing);
   wordlinebox.appendChild(newwordLine);
-  newwordContainer.appendChild(newwordLine);
+  newwordContainer.appendChild(wordlinebox);
   deletebox.appendChild(deletebutton);
-  newwordContainer.appendChild(deletebox);
-  addpage.appendChild(wordlinebox);
+  wordlinebox.appendChild(deletebox);
+  newwordContainer.appendChild(wordlinebox);
+  deletebutton.addEventListener("click", () =>
+    deleteword(wordlinebox, japanese, korean)
+  );
 }
+function deleteword(wordlinebox, japanese, korean) {
+  wordbox.removeChild(wordlinebox);
 
-// deletebutton.addEventListener("click", removeword);
-// function removeword() {
-//   wordbox.removeChild(newWordContainer);
-//   getwords = getwords.filter(
-//     (word) => !(word.japanese === japanese && word.korean === korean)
-//   );
-//   localStorage.setItem("arrJK", JSON.stringify(getwords));
-// }
-
+  getwords.splice(japanese, korean);
+  getwords = getwords.filter(
+    (word) => !(japanese === word.japanese && korean === word.korean)
+  );
+  localStorage.setItem("arrJK", JSON.stringify(getwords));
+}
+function showwords() {
+  wordbox.innerHTML = "";
+  getwords.forEach((word) => {
+    addtext(word.japanese, word.korean);
+  });
+}
+window.addEventListener("load", showwords);
 formTag.addEventListener("submit", addLS);
-window.addEventListener("load", () => {
-  getwords.forEach((element) => {});
-});
