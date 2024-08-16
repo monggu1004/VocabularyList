@@ -25,6 +25,8 @@ function addLS(event) {
 }
 
 function addtext(japanese, korean) {
+  const scrollbox = document.createElement("div");
+  scrollbox.classList.add("scrollheight");
   const newwordLine = document.createElement("div");
   newwordLine.classList.add("wordline");
   const newJapaneseword = document.createElement("div");
@@ -41,7 +43,7 @@ function addtext(japanese, korean) {
   const deletebutton = document.createElement("button");
   deletebutton.classList.add("deletebutton");
   deletebutton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
-
+  newwordContainer.appendChild(scrollbox);
   newwordLine.appendChild(newJapaneseword);
   newwordLine.appendChild(newkoreanmeaing);
   wordlinebox.appendChild(newwordLine);
@@ -68,5 +70,6 @@ function showwords() {
     addtext(word.japanese, word.korean);
   });
 }
+
 window.addEventListener("load", showwords);
 formTag.addEventListener("submit", addLS);
