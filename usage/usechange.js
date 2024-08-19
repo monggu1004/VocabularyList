@@ -120,8 +120,10 @@ async function showConversation(event) {
   let japantext = conversJapan.innerText;
   let koreantext = conversKorean.innerText;
   let savephrases = { japantext, koreantext };
-  savedwords.push(savephrases);
-
+  if (koreantext === "" && japantext === "") {
+  } else {
+    savedwords.push(savephrases);
+  }
   localStorage.setItem("saveword", JSON.stringify(savedwords));
 
   japanesePhrases = japanesePhrases.filter((phrase) => {
@@ -133,7 +135,6 @@ async function showConversation(event) {
   });
 
   event.preventDefault(); //프리벤트디폴트
-
   let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
   let randomPhrase = japanesePhrases[randomIndex];
   if (japanesePhrases.length === 0) {
@@ -149,6 +150,7 @@ async function showConversation(event) {
   // //responseData는 서버에서 가져온 이미지url
   // addImg(responseData);
 }
+
 // async function sendData(JapanText) {
 //   let response = await fetch("http://localhost:3000/api/create-img", {
 //     method: "POST",
@@ -174,12 +176,32 @@ async function showConversationtwo(event) {
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
 }
+
 function showclearbox() {
   const newvocabox = document.createElement("div");
   newvocabox.classList.add("vocaboxdetail");
   imgContainer.appendChild(newvocabox);
-  savewordlist = JSON.parse(localStorage.getItem("saveword"));
+  let savewordlocal = JSON.parse(localStorage.getItem("saveword"));
+  console.log(savewordlocal);
+
+  for (let key of savewordlocal) {
+    let vocaline = document.createElement("div");
+    vocaline.classList.add("vocaline");
+    newvocabox.appendChild(vocaline);
+    let japanesetext = key.japantext || "";
+    let koreantext = key.koreantext || "";
+    console.log(koreantext);
+    let jvocaline = document.createElement("div");
+    jvocaline.classList.add("jvoca");
+    vocaline.appendChild(jvocaline);
+    jvocaline.innerText = japanesetext;
+    let kvocaline = document.createElement("div");
+    kvocaline.classList.add("kvoca");
+    vocaline.appendChild(kvocaline);
+    kvocaline.innerText = koreantext;
+  }
 }
+
 clickGo.addEventListener("click", showConversation);
 noClick.addEventListener("click", showConversationtwo);
 clearbox.addEventListener("click", showclearbox);

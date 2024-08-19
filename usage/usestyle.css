@@ -230,23 +230,52 @@ body {
   border-color: rgb(209, 209, 209);
 }
 .vocaboxdetail {
-  width: 50vw;
-  height: 40vh;
-  background-color: brown;
+  width: 45vw;
+  height: 350px;
+  background-color: rgb(103, 146, 255);
   position: fixed;
   top: 35vh;
   overflow-y: scroll;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
+
 .vocaboxdetail ::-webkit-scrollbar {
-  width: 50px;
+  width: 10px;
+  height: 20px;
 }
 .vocaboxdetail ::-webkit-scrollbar-thumb {
-  color: blueviolet;
+  background: rgb(35, 95, 95);
 }
 .vocaboxdetail ::-webkit-scrollbar-track {
-  color: rebeccapurple;
+  background: rgb(59, 18, 100);
 }
+.jvoca {
+  width: 100%;
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.kvoca {
+  width: 100%;
+  height: 40px;
+  font-size: 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.vocaline {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid 1px rgba(120, 157, 249, 0.791);
+}
+
 .navigationbox {
   background-color: rgba(162, 190, 255, 0.966);
   box-shadow: 1px 1px 5px rgba(94, 126, 255, 0.602);
