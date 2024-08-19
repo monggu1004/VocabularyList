@@ -74,10 +74,11 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  position: relative;
-  left: 33vw;
-  top: 2vw;
+
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.154);
+  position: fixed;
+  top: 15vh;
+  left: 68vw;
 }
 .help {
   font-family: "Nanum Gothic", sans-serif;
@@ -106,13 +107,15 @@ body {
   display: none;
 }
 .navigationbox {
-  background-color: rgb(162, 190, 255);
+  background-color: rgba(162, 190, 255, 0.966);
   box-shadow: 1px 1px 5px rgba(94, 126, 255, 0.602);
   width: 100vw;
   height: 10vh;
   display: flex;
   align-items: center;
   display: none;
+  position: fixed;
+  top: 15.5%;
 }
 .navishow {
   display: block;
@@ -187,6 +190,33 @@ body {
   justify-content: center;
   align-items: center;
 }
+.searchandright {
+  display: flex;
+  justify-content: space-between;
+  width: 55vw;
+}
+.searchbox {
+  display: flex;
+  width: 24vw;
+  display: flex;
+  justify-content: space-between;
+}
+.searchinput {
+  border: solid 4px rgba(54, 103, 251, 0.877);
+  border-radius: 10px;
+  width: 20vw;
+  height: 5vh;
+  font-size: 1vw;
+  font-family: "Nanum Gothic", sans-serif;
+}
+.fa-magnifying-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vw;
+  color: rgba(54, 103, 251, 0.877);
+}
+
 .wordall:hover,
 .japanese:hover,
 .meaning:hover {
@@ -255,7 +285,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15vw;
+  width: 10vw;
   height: 15vh;
 }
 .input {
@@ -384,9 +414,6 @@ form {
   width: 80%;
   height: 80%;
 }
-.scrollheight {
-  height: 400px;
-}
 .wordcontainer {
   width: 100%;
   height: 450px;
@@ -398,6 +425,24 @@ form {
   box-shadow: 1px 5px 10px rgba(127, 81, 255, 0.199);
   overflow-y: scroll;
 }
+.wordcontainer::-webkit-scrollbar {
+  width: 15px;
+}
+.wordcontainer::-webkit-scrollbar-track {
+  background-color: rgba(202, 202, 202, 0);
+  border-radius: 20px;
+}
+
+.wordcontainer::-webkit-scrollbar-thumb {
+  background-color: rgba(176, 157, 251, 0.251);
+  border-radius: 20px;
+}
+.wordcontainer::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(176, 157, 251, 0.596);
+  border-radius: 20px;
+  transition: all 200ms ease-in-out;
+}
+
 .wordlinebox {
   display: flex;
   width: 100%;
@@ -405,7 +450,7 @@ form {
 }
 .wordline {
   width: 80%;
-  height: 100%;
+  height: 90px;
   display: flex;
   flex-direction: column;
   background-color: rgb(255, 255, 255);
