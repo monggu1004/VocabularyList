@@ -1,12 +1,10 @@
 const conversJapan = document.querySelector(".conversation");
 const conversKorean = document.querySelector(".words");
-const japantext = conversJapan.innerText;
-const koreantext = conversKorean.innerText;
-const savephrases = [{ japantext, koreantext }];
+let savewordlist = [];
 const clickGo = document.querySelector(".know");
 const noClick = document.querySelector(".unknow");
 const imgContainer = document.querySelector(".imgcontainer");
-const japanesePhrases = [
+let japanesePhrases = [
   { japanese: "今日は何をしますか？", korean: "오늘은 무엇을 할 건가요?" },
   { japanese: "昨日はとても寒かったです。", korean: "어제는 매우 추웠습니다." },
   { japanese: "これを見てもいいですか？", korean: "이것을 봐도 될까요?" },
@@ -114,16 +112,33 @@ const japanesePhrases = [
   { japanese: "電車は何時に来ますか？", korean: "전철은 몇 시에 오나요?" },
   { japanese: "部屋を探しています。", korean: "방을 찾고 있습니다." },
 ];
+let savedwords = JSON.parse(localStorage.getItem("saveword")) || [];
+let clearbox = document.querySelector(".clear");
 
 async function showConversation(event) {
   //전체함수
-  console.log("sadff");
+  let japantext = conversJapan.innerText;
+  let koreantext = conversKorean.innerText;
+  let savephrases = { japantext, koreantext };
+  savedwords.push(savephrases);
+
+  localStorage.setItem("saveword", JSON.stringify(savedwords));
+
+  japanesePhrases = japanesePhrases.filter((phrase) => {
+    return !savedwords.some(
+      (savedPhrase) =>
+        savedPhrase.japantext === phrase.japanese &&
+        savedPhrase.koreantext === phrase.korean
+    );
+  });
 
   event.preventDefault(); //프리벤트디폴트
 
   let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
   let randomPhrase = japanesePhrases[randomIndex];
-
+  if (japanesePhrases.length === 0) {
+    conversJapan.innerText = "훌륭합니다!";
+  }
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
 
@@ -155,11 +170,16 @@ async function showConversationtwo(event) {
   event.preventDefault(); //프리벤트디폴트
   let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
   let randomPhrase = japanesePhrases[randomIndex];
-  deleteword(randomPhrase);
 
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
 }
-clickGo.addEventListener("click", addclear);
+function showclearbox() {
+  const newvocabox = document.createElement("div");
+  newvocabox.classList.add("vocaboxdetail");
+  imgContainer.appendChild(newvocabox);
+  savewordlist = JSON.parse(localStorage.getItem("saveword"));
+}
 clickGo.addEventListener("click", showConversation);
 noClick.addEventListener("click", showConversationtwo);
+clearbox.addEventListener("click", showclearbox);

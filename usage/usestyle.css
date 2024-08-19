@@ -229,7 +229,24 @@ body {
   border-width: 1px;
   border-color: rgb(209, 209, 209);
 }
-
+.vocaboxdetail {
+  width: 50vw;
+  height: 40vh;
+  background-color: brown;
+  position: fixed;
+  top: 35vh;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.vocaboxdetail ::-webkit-scrollbar {
+  width: 50px;
+}
+.vocaboxdetail ::-webkit-scrollbar-thumb {
+  color: blueviolet;
+}
+.vocaboxdetail ::-webkit-scrollbar-track {
+  color: rebeccapurple;
+}
 .navigationbox {
   background-color: rgba(162, 190, 255, 0.966);
   box-shadow: 1px 1px 5px rgba(94, 126, 255, 0.602);
@@ -275,6 +292,9 @@ body {
   align-items: center;
 }
 .imgcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 50%;
   display: flex;
