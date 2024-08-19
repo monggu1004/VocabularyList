@@ -1,5 +1,8 @@
 const conversJapan = document.querySelector(".conversation");
 const conversKorean = document.querySelector(".words");
+const japantext = conversJapan.innerText;
+const koreantext = conversKorean.innerText;
+const savephrases = [{ japantext, koreantext }];
 const clickGo = document.querySelector(".know");
 const noClick = document.querySelector(".unknow");
 const imgContainer = document.querySelector(".imgcontainer");
@@ -114,33 +117,49 @@ const japanesePhrases = [
 
 async function showConversation(event) {
   //전체함수
+  console.log("sadff");
+
+  event.preventDefault(); //프리벤트디폴트
+
+  let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
+  let randomPhrase = japanesePhrases[randomIndex];
+
+  conversJapan.innerText = randomPhrase.japanese;
+  conversKorean.innerText = randomPhrase.korean;
+
+  // 랜덤 문구 생성
+  // let JapanText = conversJapan.innerText;
+
+  // let responseData = await sendData(JapanText); //>response.json으로 변한 객체
+  // //responseData는 서버에서 가져온 이미지url
+  // addImg(responseData);
+}
+// async function sendData(JapanText) {
+//   let response = await fetch("http://localhost:3000/api/create-img", {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({ qoute: JapanText }),
+//   });
+//   //sendData가 url을 올바르게 반환해야 함.
+//   const data = await response.json();
+//   return data;
+// }
+// async function addImg(Url) {
+//   if (Url) {
+//     imgContainer.innerHTML = `<img src="${Url}" alt="create img" class="imgcreate" >`;
+//   }
+// }
+
+async function showConversationtwo(event) {
+  //전체함수
   event.preventDefault(); //프리벤트디폴트
   let randomIndex = Math.floor(Math.random() * japanesePhrases.length);
   let randomPhrase = japanesePhrases[randomIndex];
+  deleteword(randomPhrase);
+
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
-  // 랜덤 문구 생성
-  let JapanText = conversJapan.innerText;
-
-  let responseData = await sendData(JapanText); //>response.json으로 변한 객체
-  //responseData는 서버에서 가져온 이미지url
-  addImg(responseData);
 }
-async function sendData(JapanText) {
-  let response = await fetch("http://localhost:3000/api/create-img", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ qoute: JapanText }),
-  });
-  //sendData가 url을 올바르게 반환해야 함.
-  const data = await response.json();
-  return data;
-}
-async function addImg(Url) {
-  if (Url) {
-    imgContainer.innerHTML = `<img src="${Url}" alt="create img" class="imgcreate" >`;
-  }
-}
-
+clickGo.addEventListener("click", addclear);
 clickGo.addEventListener("click", showConversation);
-noClick.addEventListener("click", showConversation);
+noClick.addEventListener("click", showConversationtwo);

@@ -11,6 +11,26 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.fa-arrow-left,
+.fa-circle-question,
+.fa-bars {
+  font-size: 2.5vw;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.836);
+}
+.fa-arrow-left:hover,
+.fa-circle-question:hover,
+.fa-bars:hover {
+  color: rgba(217, 226, 255, 0.952);
+
+  transition: all 100ms ease-in-out;
+}
+.fa-arrow-left:active,
+.fa-bars:active {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.836);
+  position: relative;
+  top: 1px;
+}
 .trainheader {
   width: 100vw;
   height: 15vh;
@@ -33,11 +53,217 @@ body {
   font-size: 2.5vw;
   color: white;
 }
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5vw;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.539);
+  width: 17vw;
+  justify-content: end;
+}
 .theaderrightbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 7vw;
+}
+.helpcontainer {
+  background-color: rgb(244, 246, 251);
+  width: 30vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.154);
+  position: fixed;
+  top: 15vh;
+  left: 68vw;
+}
+
+.help {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: bolder;
+  display: flex;
+  width: 20vw;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+.space {
+  width: 1vw;
+  height: 3vh;
+  color: rgb(244, 246, 251);
+}
+.space::after {
+  position: absolute;
+  bottom: 20vh;
+  right: 5vw;
+  width: 0;
+  height: 0;
+  border-left: 1.5vw solid transparent;
+  border-right: 1.5vw solid transparent;
+  border-bottom: 1.5vw solid rgb(244, 246, 251);
+  content: "";
+}
+.hidden {
+  display: none;
+}
+.headerleftbox {
+  width: 80%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.headerbuttonbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  height: 15vh;
+}
+.coverbutton {
+  background-color: rgba(231, 230, 230, 0.771);
+}
+.whiteword {
+  color: rgb(240, 241, 241);
+}
+.japaneseword {
+}
+.koreanmeaning {
+}
+.wordall,
+.japanese,
+.meaning {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-size: 1.2vw;
+  width: 33.3%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wordall:hover,
+.japanese:hover,
+.meaning:hover {
+  transition: all 200ms ease-in-out;
+  background-color: rgba(204, 203, 203, 0.775);
+}
+.clickcolor {
+  background-color: rgba(54, 103, 251, 0.877);
+}
+.wordall {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: solid;
+  border-left: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.japanese {
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.meaning {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.vocabox {
+  display: flex;
+  width: 25vw;
+  height: 90%;
+  justify-content: end;
+  align-items: center;
+}
+.clear,
+.fail {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-size: 1.2vw;
+  width: 33.3%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clear:hover,
+.fail:hover {
+  transition: all 200ms ease-in-out;
+  background-color: rgba(204, 203, 203, 0.775);
+}
+.clear {
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top: solid;
+  border-left: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+.fail {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: rgb(209, 209, 209);
+}
+
+.navigationbox {
+  background-color: rgba(162, 190, 255, 0.966);
+  box-shadow: 1px 1px 5px rgba(94, 126, 255, 0.602);
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  display: none;
+  position: fixed;
+  top: 15.5%;
+}
+.navishow {
+  display: block;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 15vw;
+  height: 10vh;
+}
+.navigation:hover {
+  background-color: rgb(200, 217, 255);
+  transition: all 200ms ease-in-out;
+  border-radius: 10px;
+}
+.navigationurl {
+  font-size: 2vw;
+  font-family: "Nanum Gothic", sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px black;
 }
 
 .traincontainer {
@@ -67,6 +293,7 @@ body {
   align-items: center;
   border-radius: 10px;
 }
+
 .wordcontainer {
   display: flex;
   flex-direction: column;
