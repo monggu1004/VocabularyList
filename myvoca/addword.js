@@ -4,6 +4,7 @@ const input1 = document.querySelector(".input1");
 const input1_1 = document.querySelector(".input1_1");
 const japantext = document.querySelector(".japaneseword");
 const koreantext = document.querySelector(".koreanmeaning");
+
 const wordbox = document.querySelector(".wordcontainer");
 const addpage = document.querySelector(".addpage");
 let getwords = JSON.parse(localStorage.getItem("arrJK")) || [];

@@ -178,12 +178,24 @@ async function showConversationtwo(event) {
 }
 
 function showclearbox() {
+  const exist = document.querySelector(".vocaboxdetail");
+  if (exist) {
+    exist.remove();
+    return;
+  }
   const newvocabox = document.createElement("div");
   newvocabox.classList.add("vocaboxdetail");
-  imgContainer.appendChild(newvocabox);
-  let savewordlocal = JSON.parse(localStorage.getItem("saveword"));
-  console.log(savewordlocal);
 
+  imgContainer.appendChild(newvocabox);
+  // let failPhrases = [];
+  let savewordlocal = JSON.parse(localStorage.getItem("saveword"));
+  // failPhrases = japanesePhrases.filter((phrase) => {
+  //   return savedwords.some(
+  //     () =>
+  //       savedPhrase.japantext === phrase.japanese &&
+  //       savedPhrase.koreantext === phrase.korean
+  //   );
+  // });
   for (let key of savewordlocal) {
     let vocaline = document.createElement("div");
     vocaline.classList.add("vocaline");
@@ -201,7 +213,6 @@ function showclearbox() {
     kvocaline.innerText = koreantext;
   }
 }
-
 clickGo.addEventListener("click", showConversation);
 noClick.addEventListener("click", showConversationtwo);
 clearbox.addEventListener("click", showclearbox);

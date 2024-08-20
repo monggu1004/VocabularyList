@@ -1,29 +1,29 @@
+const coverjapanese = document.querySelector(".japaneseword");
+const covermeaning = document.querySelector(".koreanmeaning");
 const coverall = document.querySelector(".wordall");
-const coverjapanese = document.querySelector(".japanese");
-const covermeaning = document.querySelector(".meaning");
-const japaneseword = document.querySelector(".japaneseword");
-const koreanmeaning = document.querySelector(".koreanmeaning");
+const japanese = document.querySelector(".japanese");
+const korean = document.querySelector(".meaning");
 
 function allcover() {
   coverall.classList.add("coverbutton");
   coverjapanese.classList.remove("coverbutton");
   covermeaning.classList.remove("coverbutton");
-  japaneseword.classList.remove("whiteword");
-  koreanmeaning.classList.remove("whiteword");
+  japanese.classList.remove("whiteword");
+  meaning.classList.remove("whiteword");
 }
 function japanesecover() {
   coverall.classList.remove("coverbutton");
   coverjapanese.classList.add("coverbutton");
   covermeaning.classList.remove("coverbutton");
-  japaneseword.classList.remove("whiteword");
-  koreanmeaning.classList.add("whiteword");
+  japanese.classList.add("whiteword");
+  meaning.classList.remove("whiteword");
 }
 function meaningcover() {
   coverall.classList.remove("coverbutton");
   coverjapanese.classList.remove("coverbutton");
   covermeaning.classList.add("coverbutton");
-  japaneseword.classList.add("whiteword");
-  koreanmeaning.classList.remove("whiteword");
+  japanese.classList.remove("whiteword");
+  meaning.classList.add("whiteword");
 }
 coverall.addEventListener("click", allcover);
 coverjapanese.addEventListener("click", japanesecover);
