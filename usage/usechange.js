@@ -117,6 +117,7 @@ let clearbox = document.querySelector(".clear");
 
 async function showConversation(event) {
   //전체함수
+
   let japantext = conversJapan.innerText;
   let koreantext = conversKorean.innerText;
   let savephrases = { japantext, koreantext };
