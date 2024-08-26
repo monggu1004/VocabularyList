@@ -192,6 +192,21 @@ body {
   justify-content: center;
   align-items: center;
 }
+.fa-arrow-rotate-right {
+  font-size: 1.5vw;
+  margin-left: 1vw;
+}
+.fa-arrow-rotate-right:hover {
+  color: rgba(217, 226, 255, 0.952);
+  transition: all 100ms ease-in-out;
+}
+.fa-arrow-rotate-right:active {
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.836);
+  position: relative;
+  top: 1px;
+  color: rgb(82, 154, 255);
+}
+
 .searchandright {
   display: flex;
   justify-content: space-between;

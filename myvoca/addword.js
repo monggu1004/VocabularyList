@@ -4,6 +4,10 @@ const input1 = document.querySelector(".input1");
 const input1_1 = document.querySelector(".input1_1");
 const japantext = document.querySelector(".japaneseword");
 const koreantext = document.querySelector(".koreanmeaning");
+const wordallbutton = document.querySelector(".wordall");
+const japanesebutton = document.querySelector(".japanese");
+const koreanbutton = document.querySelector(".meaning");
+const rotate = document.querySelector(".fa-arrow-rotate-right");
 
 const wordbox = document.querySelector(".wordcontainer");
 const addpage = document.querySelector(".addpage");
@@ -24,7 +28,7 @@ function addLS(event) {
   input1.value = "";
   input1_1.value = "";
 }
-
+const js = 0;
 function addtext(japanese, korean) {
   const scrollbox = document.createElement("div");
   scrollbox.classList.add("scrollheight");
@@ -55,6 +59,47 @@ function addtext(japanese, korean) {
   deletebutton.addEventListener("click", () =>
     deleteword(wordlinebox, japanese, korean)
   );
+  wordallbutton.addEventListener("click", () => {
+    allcover(newJapaneseword, newkoreanmeaing);
+  });
+  japanesebutton.addEventListener("click", () => {
+    japanesecover(newJapaneseword, newkoreanmeaing);
+  });
+  koreanbutton.addEventListener("click", () => {
+    koreancover(newJapaneseword, newkoreanmeaing);
+  });
+  rotate.addEventListener("click", () => {
+    rotatef(newJapaneseword, newkoreanmeaing);
+  });
+}
+
+function allcover(newj, newk) {
+  wordallbutton.classList.add("coverbutton");
+  japanesebutton.classList.remove("coverbutton");
+  koreanbutton.classList.remove("coverbutton");
+  newj.classList.add("whiteword");
+  newk.classList.add("whiteword");
+}
+function japanesecover(newj, newk) {
+  wordallbutton.classList.remove("coverbutton");
+  japanesebutton.classList.add("coverbutton");
+  koreanbutton.classList.remove("coverbutton");
+  newk.classList.remove("whiteword");
+  newj.classList.add("whiteword");
+}
+function koreancover(newj, newk) {
+  wordallbutton.classList.remove("coverbutton");
+  japanesebutton.classList.remove("coverbutton");
+  koreanbutton.classList.add("coverbutton");
+  newk.classList.add("whiteword");
+  newj.classList.remove("whiteword");
+}
+function rotatef(newj, newk) {
+  wordallbutton.classList.remove("coverbutton");
+  japanesebutton.classList.remove("coverbutton");
+  koreanbutton.classList.remove("coverbutton");
+  newj.classList.remove("whiteword");
+  newk.classList.remove("whiteword");
 }
 function deleteword(wordlinebox, japanese, korean) {
   wordbox.removeChild(wordlinebox);
