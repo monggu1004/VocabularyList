@@ -22,20 +22,23 @@ body {
 }
 .fa-arrow-left,
 .fa-circle-question,
-.fa-bars {
+.fa-bars,
+.fa-book {
   font-size: 2.5vw;
   color: white;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.836);
 }
 .fa-arrow-left:hover,
 .fa-circle-question:hover,
-.fa-bars:hover {
+.fa-bars:hover,
+.fa-book:hover {
   color: rgba(217, 226, 255, 0.952);
 
   transition: all 100ms ease-in-out;
 }
 .fa-arrow-left:active,
-.fa-bars:active {
+.fa-bars:active,
+.fa-book:active {
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.836);
   position: relative;
   top: 1px;
@@ -53,7 +56,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 7vw;
+  width: 10vw;
 }
 .title {
   display: flex;
@@ -427,6 +430,33 @@ form {
   justify-content: center;
   align-items: center;
 }
+.vocaonoff {
+  width: 41vw;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.vocabutton {
+  width: 5vw;
+  height: 100%;
+  border: none;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-rectangle-xmark {
+  font-size: 2vw;
+  border: none;
+  color: rgba(176, 157, 251, 0.28);
+}
+.fa-rectangle-xmark:hover {
+  color: rgba(161, 138, 253, 0.738);
+}
+.fa-rectangle-xmark:active {
+  color: rgba(251, 117, 124, 0.828);
+}
 .addpage {
   width: 80%;
   height: 80%;
@@ -570,6 +600,9 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-size: 2vw;
 }
 .quizko {
   background-color: white;
@@ -580,6 +613,9 @@ form {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: bolder;
+  font-size: 2vw;
 }
 .bottombox {
   width: 100%;
@@ -591,7 +627,7 @@ form {
 }
 .rightwrongbox {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 80%;
@@ -604,6 +640,7 @@ form {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  border: none;
 }
 .wrong {
   width: 40%;
@@ -612,6 +649,7 @@ form {
   justify-content: center;
   align-items: center;
   border-radius: 20px;
+  border: none;
 }
 .right:hover,
 .wrong:hover {
@@ -637,10 +675,22 @@ form {
 }
 .playbuttonbox {
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 20%;
+}
+.stopbutton {
+  margin-left: 10px;
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+  font-size: 1vw;
+  font-weight: 900;
+  background-color: white;
+  text-shadow: 2px 2px 5px rgba(86, 44, 252, 0.635);
+  transition: all 100ms ease-in-out;
 }
 .playbutton {
   margin-left: 10px;
@@ -658,5 +708,17 @@ form {
   text-shadow: 5px 5px 15px rgb(83, 40, 255);
 }
 .playbutton:active {
+  color: rgb(29, 80, 220);
+}
+.stopbutton:hover {
+  text-shadow: 5px 5px 15px rgb(83, 40, 255);
+}
+.stopbutton:active {
   color: rgb(199, 15, 15);
+}
+.blueback {
+  background-color: rgb(41, 112, 227);
+}
+.redback {
+  background-color: rgb(204, 15, 15);
 }
