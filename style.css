@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
 }
+body {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
 .mainPage {
   width: 100vw;
@@ -238,11 +243,24 @@ a:hover {
 .todaywordJA {
   font-size: 2vw;
   font-weight: bolder;
+  width: 10vw;
+  height: 4vh;
+  background-color: rgb(233, 239, 248);
+  border-radius: 10px;
+  border: solid 2px rgb(33, 102, 199);
 }
 .todaywordKO {
   font-size: 1.5vw;
   font-weight: bolder;
+  font-size: 2vw;
+  font-weight: bolder;
+  width: 10vw;
+  height: 4vh;
+  background-color: rgb(233, 239, 248);
+  border-radius: 10px;
+  border: solid 2px rgb(33, 102, 199);
 }
+
 .todaywordAN {
   background-color: rgb(59, 123, 213);
   cursor: pointer;
@@ -274,4 +292,48 @@ a:hover {
   font-size: 1vw;
   color: rgb(41, 41, 41);
   font-weight: bolder;
+}
+.mainhelpcontainer {
+  background-color: rgb(244, 246, 251);
+  width: 30vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.154);
+  position: fixed;
+  z-index: 1;
+  top: 15vh;
+  left: 68vw;
+}
+.mainhelp {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1vw;
+  font-weight: bolder;
+  display: flex;
+  width: 20vw;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+.mainspace {
+  width: 1vw;
+  height: 3vh;
+  color: rgb(244, 246, 251);
+}
+.mainspace::after {
+  position: absolute;
+  bottom: 20vh;
+  right: 5vw;
+  width: 0;
+  height: 0;
+  border-left: 1.5vw solid transparent;
+  border-right: 1.5vw solid transparent;
+  border-bottom: 1.5vw solid rgb(244, 246, 251);
+  content: "";
 }
