@@ -113,7 +113,8 @@ let japanesePhrases = [
   { japanese: "部屋を探しています。", korean: "방을 찾고 있습니다." },
 ];
 let savedwords = JSON.parse(localStorage.getItem("saveword")) || [];
-let clearbox = document.querySelector(".clear");
+const clearbox = document.querySelector(".clear");
+const failbox = document.querySelector(".fail");
 
 async function showConversation(event) {
   //전체함수
@@ -177,6 +178,18 @@ async function showConversationtwo(event) {
   conversJapan.innerText = randomPhrase.japanese;
   conversKorean.innerText = randomPhrase.korean;
 }
+const wordcontainer = document.querySelector(".wordcontainer");
+
+function clearcover() {
+  clear.classList.add("coverbutton");
+  fail.classList.remove("coverbutton");
+}
+function failcover() {
+  clear.classList.remove("coverbutton");
+  fail.classList.add("coverbutton");
+  showfailbox();
+}
+let saveds = JSON.parse(localStorage.getItem("saveword"));
 
 function showclearbox() {
   const exist = document.querySelector(".vocaboxdetail");
@@ -187,7 +200,7 @@ function showclearbox() {
   const newvocabox = document.createElement("div");
   newvocabox.classList.add("vocaboxdetail");
 
-  imgContainer.appendChild(newvocabox);
+  wordcontainer.appendChild(newvocabox);
   // let failPhrases = [];
   let savewordlocal = JSON.parse(localStorage.getItem("saveword"));
   // failPhrases = japanesePhrases.filter((phrase) => {
@@ -214,6 +227,44 @@ function showclearbox() {
     kvocaline.innerText = koreantext;
   }
 }
+function showfailbox() {
+  const exist = document.querySelector(".vocaboxdetail");
+  if (exist) {
+    exist.remove();
+    return;
+  }
+  const newvocabox = document.createElement("div");
+  newvocabox.classList.add("vocaboxdetail");
+
+  let fails = [];
+  wordcontainer.appendChild(newvocabox);
+  fails = japanesePhrases.filter((phrase) => {
+    return !saveds.some(
+      (savedPhrase) =>
+        savedPhrase.japantext === phrase.japanese &&
+        savedPhrase.koreantext === phrase.korean
+    );
+  });
+  for (let key of fails) {
+    let vocaline = document.createElement("div");
+    vocaline.classList.add("vocaline");
+    newvocabox.appendChild(vocaline);
+    let japanesetext = key.japanese || "";
+    let koreantext = key.korean || "";
+    console.log(koreantext);
+    let jvocaline = document.createElement("div");
+    jvocaline.classList.add("jvoca");
+    vocaline.appendChild(jvocaline);
+    jvocaline.innerText = japanesetext;
+    let kvocaline = document.createElement("div");
+    kvocaline.classList.add("kvoca");
+    vocaline.appendChild(kvocaline);
+    kvocaline.innerText = koreantext;
+  }
+}
 clickGo.addEventListener("click", showConversation);
 noClick.addEventListener("click", showConversationtwo);
 clearbox.addEventListener("click", showclearbox);
+failbox.addEventListener("click", showfailbox);
+clearbox.addEventListener("click", clearcover);
+failbox.addEventListener("click", failcover);

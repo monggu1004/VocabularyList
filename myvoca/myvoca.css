@@ -431,19 +431,19 @@ form {
   align-items: center;
 }
 .vocaonoff {
-  width: 41vw;
+  width: 95%;
   height: 5vh;
   display: flex;
   align-items: center;
   justify-content: end;
 }
 .vocabutton {
-  width: 5vw;
+  width: 100%;
   height: 100%;
   border: none;
   background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
 }
 .fa-rectangle-xmark {

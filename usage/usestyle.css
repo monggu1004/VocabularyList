@@ -261,10 +261,12 @@ body {
   flex-direction: column;
 }
 
-.vocaboxdetail::-webkit-scrollbar {
-  display: none;
+.vocaboxdetail::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0);
 }
-
+.vocaboxdetail::-webkit-scrollbar-thumb {
+  background-color: rgba(108, 150, 255, 0.638);
+}
 .jvoca {
   width: 100%;
   height: 60px;

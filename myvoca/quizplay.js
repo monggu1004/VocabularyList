@@ -150,6 +150,7 @@ function quizshow() {
 }
 const vocabutton = document.querySelector(".vocabutton");
 const fabook = document.querySelector(".fa-book");
+wordlistbox.removeChild(addpagebox);
 function vocaoff() {
   wordlistbox.removeChild(addpagebox);
 }
