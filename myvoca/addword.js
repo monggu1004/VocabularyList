@@ -116,6 +116,5 @@ function showwords() {
     addtext(word.japanese, word.korean);
   });
 }
-
-window.addEventListener("load", showwords);
+showwords();
 formTag.addEventListener("submit", addLS);
